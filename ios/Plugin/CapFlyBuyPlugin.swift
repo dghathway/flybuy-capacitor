@@ -46,8 +46,59 @@ public class CapFlyBuyPlugin: CAPPlugin {
         }
     }
     
+    private func handlePluginResult<T: DictionaryRepresentable>(result: T?, error: Error?, call: CAPPluginCall) -> Void {
+        if let result = result {
+            call.resolve([
+                "status": "ok",
+                "messageAs": result
+            ])
+        } else if let error = error {
+            call.resolve([
+                "status": "error",
+                "messageAs": error.localizedDescription
+            ])
+        }
+    }
+    
+    private func getSites(query: String?, call: CAPPluginCall) {
+        FlyBuy.Core.sites.fetchAll(query: query) { self.handlePluginResult(result: $0, error: $1, call: call) }
+    }
+    
     @objc func fetchOrders(_ call: CAPPluginCall) {
         FlyBuy.Core.orders.fetch() { self.handlePluginResult(result: $0, error: $1, call: call) }
+    }
+    
+    @objc func getSitesByQuery(_ call: CAPPluginCall) {
+        guard let queryTerm = call.getArray("query")?[0] as? String else {
+            call.resolve([
+                "status": "error",
+                "messageAs": "No parameters passed to function"
+            ])
+            return
+        }
+        getSites(query: queryTerm, call: call)
+    }
+    
+    @objc func getAllSites(_ call: CAPPluginCall) {
+        getSites(query: nil, call: call)
+    }
+    
+    @objc func createCustomer(_ call: CAPPluginCall) {
+        guard let customerData = call.getArray("customer")?[0] as? NSDictionary else {
+            call.resolve([
+                "status": "error",
+                "messageAs": "No parameters passed to function"
+            ])
+            return
+        }
+        
+        let customerInfo = CustomerInfo(name: customerData["name"] as! String,
+                                        carType: customerData["carType"] as? String,
+                                        carColor: customerData["carColor"] as? String,
+                                        licensePlate: customerData["licensePlate"] as? String,
+                                        phone: customerData["phone"] as? String)
+        
+        FlyBuy.Core.customer.create(customerInfo, termsOfService: true, ageVerification: true)  { self.handlePluginResult(result: $0, error: $1, call: call) }
     }
     
 }

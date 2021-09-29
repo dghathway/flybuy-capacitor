@@ -11,9 +11,9 @@ export interface CapFlyBuyPlugin {
   onLocationPermissionChanged(): Promise<CAPResult>
   fetchOrders(): Promise<CAPResult>
   getAllSites(): Promise<CAPResult>
-  getSitesByQuery(options: { value: string }): Promise<CAPResult>
+  getSitesByQuery(options: { query: string[] }): Promise<CAPResult>
   getConfig(): Promise<CAPResult>
-  createCustomer(options: { customer: any }): Promise<CAPResult>
+  createCustomer(options: { customer: string[] }): Promise<CAPResult>
   updateCustomer(options: { customer: any }): Promise<CAPResult>
   getCurrentCustomer(): Promise<CAPResult>
   updatePushToken(options: { pushToken: string }): Promise<CAPResult>
