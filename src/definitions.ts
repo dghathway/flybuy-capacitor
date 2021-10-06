@@ -4,8 +4,8 @@ export interface CAPResult {
 }
 
 export interface CapFlyBuyPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>
-  onCreate(options: { appKey: string }): Promise<CAPResult>
+  // echo(options: { value: string[] }): Promise<CAPResult>
+  onCreate(options: { appKey: string[] }): Promise<CAPResult>
   onActivityStarted(): Promise<CAPResult>
   onActivityStopped(): Promise<CAPResult>
   onLocationPermissionChanged(): Promise<CAPResult>
@@ -13,16 +13,16 @@ export interface CapFlyBuyPlugin {
   getAllSites(): Promise<CAPResult>
   getSitesByQuery(options: { query: string[] }): Promise<CAPResult>
   getConfig(): Promise<CAPResult>
-  createCustomer(options: { customer: string[] }): Promise<CAPResult>
-  updateCustomer(options: { customer: any }): Promise<CAPResult>
+  createCustomer(options: { customer: any[] }): Promise<CAPResult>
+  updateCustomer(options: { customer: any[] }): Promise<CAPResult>
   getCurrentCustomer(): Promise<CAPResult>
-  updatePushToken(options: { pushToken: string }): Promise<CAPResult>
-  handleNotification(options: { userInfo: any }): Promise<CAPResult>
-  createOrder(options: { siteId: string, partnerId: string, customerInfo: any, pickupWindow: any }): Promise<CAPResult>
-  claimOrder(options: { redemptionCode: string }): Promise<CAPResult>
+  updatePushToken(options: { token: string[] }): Promise<CAPResult>
+  handleNotification(options: { notification: any[] }): Promise<CAPResult>
+  createOrder(options: { order: any[] }): Promise<CAPResult>
+  claimOrder(options: { code: string[] }): Promise<CAPResult>
   getPermissionStatus(): Promise<CAPResult>
-  requestPermissions(options: { isForBackgroundTracking: any }): Promise<CAPResult>
-  updateState(options: { orderId: string, state: any }): Promise<CAPResult>
+  requestPermissions(options: { permissions: any[] }): Promise<CAPResult>
+  updateState(options: { event: any[] }): Promise<CAPResult>
   onEvents(): Promise<CAPResult>
   offEvents(): Promise<CAPResult>
 }

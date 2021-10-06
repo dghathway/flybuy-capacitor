@@ -13,7 +13,6 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
 * [`onCreate(...)`](#oncreate)
 * [`onActivityStarted()`](#onactivitystarted)
 * [`onActivityStopped()`](#onactivitystopped)
@@ -41,30 +40,15 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
-
-```typescript
-echo(options: { value: string; }) => any
-```
-
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>any</code>
-
---------------------
-
-
 ### onCreate(...)
 
 ```typescript
-onCreate(options: { appKey: string; }) => any
+onCreate(options: { appKey: string[]; }) => any
 ```
 
-| Param         | Type                             |
-| ------------- | -------------------------------- |
-| **`options`** | <code>{ appKey: string; }</code> |
+| Param         | Type                         |
+| ------------- | ---------------------------- |
+| **`options`** | <code>{ appKey: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -129,12 +113,12 @@ getAllSites() => any
 ### getSitesByQuery(...)
 
 ```typescript
-getSitesByQuery(options: { value: string; }) => any
+getSitesByQuery(options: { query: string[]; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| Param         | Type                        |
+| ------------- | --------------------------- |
+| **`options`** | <code>{ query: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -155,12 +139,12 @@ getConfig() => any
 ### createCustomer(...)
 
 ```typescript
-createCustomer(options: { customer: any; }) => any
+createCustomer(options: { customer: any[]; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ customer: any; }</code> |
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ customer: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -170,12 +154,12 @@ createCustomer(options: { customer: any; }) => any
 ### updateCustomer(...)
 
 ```typescript
-updateCustomer(options: { customer: any; }) => any
+updateCustomer(options: { customer: any[]; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ customer: any; }</code> |
+| Param         | Type                           |
+| ------------- | ------------------------------ |
+| **`options`** | <code>{ customer: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -196,12 +180,12 @@ getCurrentCustomer() => any
 ### updatePushToken(...)
 
 ```typescript
-updatePushToken(options: { pushToken: string; }) => any
+updatePushToken(options: { token: string[]; }) => any
 ```
 
-| Param         | Type                                |
-| ------------- | ----------------------------------- |
-| **`options`** | <code>{ pushToken: string; }</code> |
+| Param         | Type                        |
+| ------------- | --------------------------- |
+| **`options`** | <code>{ token: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -211,12 +195,12 @@ updatePushToken(options: { pushToken: string; }) => any
 ### handleNotification(...)
 
 ```typescript
-handleNotification(options: { userInfo: any; }) => any
+handleNotification(options: { notification: any[]; }) => any
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ userInfo: any; }</code> |
+| Param         | Type                               |
+| ------------- | ---------------------------------- |
+| **`options`** | <code>{ notification: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -226,12 +210,12 @@ handleNotification(options: { userInfo: any; }) => any
 ### createOrder(...)
 
 ```typescript
-createOrder(options: { siteId: string; partnerId: string; customerInfo: any; pickupWindow: any; }) => any
+createOrder(options: { order: any[]; }) => any
 ```
 
-| Param         | Type                                                                                      |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| **`options`** | <code>{ siteId: string; partnerId: string; customerInfo: any; pickupWindow: any; }</code> |
+| Param         | Type                        |
+| ------------- | --------------------------- |
+| **`options`** | <code>{ order: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -241,12 +225,12 @@ createOrder(options: { siteId: string; partnerId: string; customerInfo: any; pic
 ### claimOrder(...)
 
 ```typescript
-claimOrder(options: { redemptionCode: string; }) => any
+claimOrder(options: { code: string[]; }) => any
 ```
 
-| Param         | Type                                     |
-| ------------- | ---------------------------------------- |
-| **`options`** | <code>{ redemptionCode: string; }</code> |
+| Param         | Type                       |
+| ------------- | -------------------------- |
+| **`options`** | <code>{ code: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -267,12 +251,12 @@ getPermissionStatus() => any
 ### requestPermissions(...)
 
 ```typescript
-requestPermissions(options: { isForBackgroundTracking: any; }) => any
+requestPermissions(options: { permissions: any[]; }) => any
 ```
 
-| Param         | Type                                           |
-| ------------- | ---------------------------------------------- |
-| **`options`** | <code>{ isForBackgroundTracking: any; }</code> |
+| Param         | Type                              |
+| ------------- | --------------------------------- |
+| **`options`** | <code>{ permissions: {}; }</code> |
 
 **Returns:** <code>any</code>
 
@@ -282,12 +266,12 @@ requestPermissions(options: { isForBackgroundTracking: any; }) => any
 ### updateState(...)
 
 ```typescript
-updateState(options: { orderId: string; state: any; }) => any
+updateState(options: { event: any[]; }) => any
 ```
 
-| Param         | Type                                          |
-| ------------- | --------------------------------------------- |
-| **`options`** | <code>{ orderId: string; state: any; }</code> |
+| Param         | Type                        |
+| ------------- | --------------------------- |
+| **`options`** | <code>{ event: {}; }</code> |
 
 **Returns:** <code>any</code>
 
