@@ -1,0 +1,340 @@
+{
+  "api": {
+    "name": "CapFlyBuyPlugin",
+    "slug": "capflybuyplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "onCreate",
+        "signature": "(options: { appKey: string[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ appKey: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "oncreate"
+      },
+      {
+        "name": "onActivityStarted",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "onactivitystarted"
+      },
+      {
+        "name": "onActivityStopped",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "onactivitystopped"
+      },
+      {
+        "name": "onLocationPermissionChanged",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "onlocationpermissionchanged"
+      },
+      {
+        "name": "fetchOrders",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "fetchorders"
+      },
+      {
+        "name": "getAllSites",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "getallsites"
+      },
+      {
+        "name": "getSitesByQuery",
+        "signature": "(options: { query: string[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ query: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "getsitesbyquery"
+      },
+      {
+        "name": "getConfig",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "getconfig"
+      },
+      {
+        "name": "createCustomer",
+        "signature": "(options: { customer: Customer[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ customer: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Customer",
+          "CAPResult"
+        ],
+        "slug": "createcustomer"
+      },
+      {
+        "name": "updateCustomer",
+        "signature": "(options: { customer: Customer[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ customer: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Customer",
+          "CAPResult"
+        ],
+        "slug": "updatecustomer"
+      },
+      {
+        "name": "getCurrentCustomer",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "getcurrentcustomer"
+      },
+      {
+        "name": "updatePushToken",
+        "signature": "(options: { token: string[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ token: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "updatepushtoken"
+      },
+      {
+        "name": "handleNotification",
+        "signature": "(options: { notification: any[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ notification: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "handlenotification"
+      },
+      {
+        "name": "createOrder",
+        "signature": "(options: { order: Order[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ order: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "Order",
+          "CAPResult"
+        ],
+        "slug": "createorder"
+      },
+      {
+        "name": "claimOrder",
+        "signature": "(options: { code: string[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ code: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "claimorder"
+      },
+      {
+        "name": "getPermissionStatus",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "getpermissionstatus"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "(options: { permissions: boolean[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ permissions: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "requestpermissions"
+      },
+      {
+        "name": "updateState",
+        "signature": "(options: { event: any[]; }) => any",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ event: {}; }"
+          }
+        ],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "updatestate"
+      },
+      {
+        "name": "onEvents",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "onevents"
+      },
+      {
+        "name": "offEvents",
+        "signature": "() => any",
+        "parameters": [],
+        "returns": "any",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "CAPResult"
+        ],
+        "slug": "offevents"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "CAPResult",
+      "slug": "capresult",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "status",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "\"error\" | \"ok\""
+        },
+        {
+          "name": "messageAs",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "any"
+        }
+      ]
+    }
+  ],
+  "enums": []
+}

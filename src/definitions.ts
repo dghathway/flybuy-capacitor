@@ -3,9 +3,45 @@ export interface CAPResult {
   messageAs?: any
 }
 
+export type Customer = {
+  name: string
+  carType: string
+  carColor: string
+  licensePlate: string
+  phone: string
+}
+
+export type Order = {
+  siteId: number
+  partnerId: string
+  customer: Customer
+  pickupWindow?: any
+}
+
+export type ICapFlyBuy = {
+  onCreate(appKey: string): Promise<CAPResult>
+  onActivityStarted(): Promise<CAPResult>
+  onActivityStopped(): Promise<CAPResult>
+  onLocationPermissionChanged(): Promise<CAPResult>
+  fetchOrders(): Promise<CAPResult>
+  getAllSites(): Promise<CAPResult>
+  getSitesByQuery(query: string): Promise<CAPResult>
+  getConfig(): Promise<CAPResult>
+  createCustomer(customer: Customer): Promise<CAPResult>
+  updateCustomer(customer: Customer): Promise<CAPResult>
+  getCurrentCustomer(): Promise<CAPResult>
+  updatePushToken(token: string): Promise<CAPResult>
+  handleNotification(notification: any): Promise<CAPResult>
+  createOrder(order: Order): Promise<CAPResult>
+  claimOrder(code: string): Promise<CAPResult>
+  getPermissionStatus(): Promise<CAPResult>
+  requestPermissions(permissions: any): Promise<CAPResult>
+  updateState(orderId: string, status: string): Promise<CAPResult>
+  onEvents(): Promise<CAPResult>
+  offEvents(): Promise<CAPResult>
+}
 export interface CapFlyBuyPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>
-  onCreate(options: { appKey: string }): Promise<CAPResult>
+  onCreate(options: { appKey: string[] }): Promise<CAPResult>
   onActivityStarted(): Promise<CAPResult>
   onActivityStopped(): Promise<CAPResult>
   onLocationPermissionChanged(): Promise<CAPResult>
@@ -13,16 +49,16 @@ export interface CapFlyBuyPlugin {
   getAllSites(): Promise<CAPResult>
   getSitesByQuery(options: { query: string[] }): Promise<CAPResult>
   getConfig(): Promise<CAPResult>
-  createCustomer(options: { customer: string[] }): Promise<CAPResult>
-  updateCustomer(options: { customer: any }): Promise<CAPResult>
+  createCustomer(options: { customer: Customer[] }): Promise<CAPResult>
+  updateCustomer(options: { customer: Customer[] }): Promise<CAPResult>
   getCurrentCustomer(): Promise<CAPResult>
-  updatePushToken(options: { pushToken: string }): Promise<CAPResult>
-  handleNotification(options: { userInfo: any }): Promise<CAPResult>
-  createOrder(options: { siteId: string, partnerId: string, customerInfo: any, pickupWindow: any }): Promise<CAPResult>
-  claimOrder(options: { redemptionCode: string }): Promise<CAPResult>
+  updatePushToken(options: { token: string[] }): Promise<CAPResult>
+  handleNotification(options: { notification: any[] }): Promise<CAPResult>
+  createOrder(options: { order: Order[] }): Promise<CAPResult>
+  claimOrder(options: { code: string[] }): Promise<CAPResult>
   getPermissionStatus(): Promise<CAPResult>
-  requestPermissions(options: { isForBackgroundTracking: any }): Promise<CAPResult>
-  updateState(options: { orderId: string, state: any }): Promise<CAPResult>
+  requestPermissions(options: { permissions: boolean[] }): Promise<CAPResult>
+  updateState(options: { event: any[] }): Promise<CAPResult>
   onEvents(): Promise<CAPResult>
   offEvents(): Promise<CAPResult>
 }
