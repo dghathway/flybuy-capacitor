@@ -13,11 +13,11 @@
     "ios/Plugin/",
     "CapacitorFlybuyPlugin.podspec"
   ],
-  "author": "phileba",
+  "author": "dghathway",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dghathway/flybuy-capacitor.git.git"
+    "url": "git+https://github.com/dghathway/flybuy-capacitor.git"
   },
   "bugs": {
     "url": "https://github.com/dghathway/flybuy-capacitor.git/issues"
