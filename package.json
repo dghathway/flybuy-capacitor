@@ -17,10 +17,10 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/g8z/capacitor-flybuy-plugin.git.git"
+    "url": "git+https://github.com/dghathway/flybuy-capacitor.git.git"
   },
   "bugs": {
-    "url": "https://github.com/g8z/capacitor-flybuy-plugin.git/issues"
+    "url": "https://github.com/dghathway/flybuy-capacitor.git/issues"
   },
   "keywords": [
     "capacitor",
@@ -38,10 +38,9 @@
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api CapFlyBuyPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "build": "npm run clean && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
-    "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "watch": "tsc --watch"
   },
   "devDependencies": {
     "@capacitor/android": "^3.0.0",
